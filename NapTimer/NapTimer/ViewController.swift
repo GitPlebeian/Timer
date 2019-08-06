@@ -9,11 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var timerButton: UIButton!
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    // MARK: - Properties
+    
+    var napTimer = NapTimer()
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        napTimer.startTimer(30)
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func timerButtonTapped(_ sender: Any) {
+        
+    }
+    
 
 
 }

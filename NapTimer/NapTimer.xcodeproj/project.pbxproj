@@ -12,6 +12,7 @@
 		8677D8F722F9DAAF00EEEC9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8677D8F522F9DAAF00EEEC9D /* Main.storyboard */; };
 		8677D8F922F9DAAF00EEEC9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8677D8F822F9DAAF00EEEC9D /* Assets.xcassets */; };
 		8677D8FC22F9DAAF00EEEC9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8677D8FA22F9DAAF00EEEC9D /* LaunchScreen.storyboard */; };
+		8677D90522F9DE8600EEEC9D /* NapTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8677D90422F9DE8600EEEC9D /* NapTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8677D8F822F9DAAF00EEEC9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8677D8FB22F9DAAF00EEEC9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8677D8FD22F9DAAF00EEEC9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8677D90422F9DE8600EEEC9D /* NapTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				8677D8F022F9DAAF00EEEC9D /* NapTimer */,
-				8677D8EF22F9DAAF00EEEC9D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,19 +50,30 @@
 				8677D8EE22F9DAAF00EEEC9D /* NapTimer.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		8677D8F022F9DAAF00EEEC9D /* NapTimer */ = {
 			isa = PBXGroup;
 			children = (
+				8677D8F522F9DAAF00EEEC9D /* Main.storyboard */,
 				8677D8F122F9DAAF00EEEC9D /* AppDelegate.swift */,
 				8677D8F322F9DAAF00EEEC9D /* ViewController.swift */,
-				8677D8F522F9DAAF00EEEC9D /* Main.storyboard */,
+				8677D90422F9DE8600EEEC9D /* NapTimer.swift */,
+				8677D90322F9DBD800EEEC9D /* Resources */,
+				8677D8EF22F9DAAF00EEEC9D /* Products */,
+			);
+			path = NapTimer;
+			sourceTree = "<group>";
+		};
+		8677D90322F9DBD800EEEC9D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				8677D8F822F9DAAF00EEEC9D /* Assets.xcassets */,
 				8677D8FA22F9DAAF00EEEC9D /* LaunchScreen.storyboard */,
 				8677D8FD22F9DAAF00EEEC9D /* Info.plist */,
 			);
-			path = NapTimer;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8677D8F422F9DAAF00EEEC9D /* ViewController.swift in Sources */,
+				8677D90522F9DE8600EEEC9D /* NapTimer.swift in Sources */,
 				8677D8F222F9DAAF00EEEC9D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +297,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2WP5X762NJ;
-				INFOPLIST_FILE = NapTimer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NapTimer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +315,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2WP5X762NJ;
-				INFOPLIST_FILE = NapTimer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NapTimer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
