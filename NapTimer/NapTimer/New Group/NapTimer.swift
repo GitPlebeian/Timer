@@ -8,9 +8,17 @@
 
 import Foundation
 
+protocol NapTimerDelegate: class {
+    func timerSecondTicked()
+    func timerStopped()
+    func timerCompleted()
+}
+
 class NapTimer {
     
     // MARK: - Properties
+    
+    weak var delegate: NapTimerDelegate?
     
     private var timer: Timer?
     var timeLeft: TimeInterval?
@@ -25,7 +33,7 @@ class NapTimer {
             print("Timer is already running!")
         } else {
             timeLeft = time
-            timer = Timer(timeInterval: 1, repeats: true, block: { (_) in
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
                 self.secondTicked()
             })
         }
@@ -36,6 +44,7 @@ class NapTimer {
         timer?.invalidate()
         print("Stopped timer")
         // Let the view controller know what is good
+        delegate?.timerStopped()
     }
     
     // MARK: - Private Methods
@@ -45,11 +54,20 @@ class NapTimer {
         if timeLeft > 0 {
             
             self.timeLeft = timeLeft - 1
-            print(self.timeLeft as Any)
+            print(timeLeftAsString())
             
+            delegate?.timerSecondTicked()
         } else {
-            
             stopTimer()
+            delegate?.timerCompleted()
         }
+    }
+    
+    func timeLeftAsString() -> String {
+        let timeRemaining = Int(timeLeft ?? 3 * 60)
+        let minutesRemaining = timeRemaining / 60
+        let secondRemaining = timeRemaining - (minutesRemaining * 60)
+        
+        return String(format: "%02d : %02d", arguments: [minutesRemaining, secondRemaining])
     }
 }

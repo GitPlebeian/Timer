@@ -59,7 +59,7 @@
 				8677D8F522F9DAAF00EEEC9D /* Main.storyboard */,
 				8677D8F122F9DAAF00EEEC9D /* AppDelegate.swift */,
 				8677D8F322F9DAAF00EEEC9D /* ViewController.swift */,
-				8677D90422F9DE8600EEEC9D /* NapTimer.swift */,
+				8677D90622F9E68D00EEEC9D /* New Group */,
 				8677D90322F9DBD800EEEC9D /* Resources */,
 				8677D8EF22F9DAAF00EEEC9D /* Products */,
 			);
@@ -74,6 +74,14 @@
 				8677D8FD22F9DAAF00EEEC9D /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		8677D90622F9E68D00EEEC9D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				8677D90422F9DE8600EEEC9D /* NapTimer.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
