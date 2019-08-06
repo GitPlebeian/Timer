@@ -52,6 +52,33 @@ class ViewController: UIViewController {
         timerButton.setTitle(buttonTitle, for: .normal)
         timerButton.setTitleColor(buttonColor, for: .normal)
     }
+    
+    func presentAlear() {
+        // Create alert controller
+        let alertController = UIAlertController(title: "Times up", message: "Do you want to keep sleeping", preferredStyle: .alert)
+        
+        // Add textfield and actions
+        alertController.addTextField { (textField) in
+            textField.keyboardType = .numberPad
+            textField.placeholder = "Ho many mor seconds"
+            
+        }
+        // Present alert controller
+        
+        let dismissAction = UIAlertAction(title: "I'm Awake", style: .destructive, handler: nil)
+        let snoozeAction = UIAlertAction(title: "Snooze", style: .default, handler: {(_) in
+            if let textField = alertController.textFields?.first,
+            
+            let inputText = textField.text,
+                let textAsDouble = Double(inputText) {
+                self.napTimer.startTimer(textAsDouble)
+            }
+        })
+        alertController.addAction(dismissAction)
+        alertController.addAction(snoozeAction)
+        
+        present(alertController, animated: true)
+    }
 }
 
 extension ViewController: NapTimerDelegate {
@@ -64,7 +91,7 @@ extension ViewController: NapTimerDelegate {
     }
     
     func timerCompleted() {
-        // Present alert
+        presentAlear()
     }
     
     
